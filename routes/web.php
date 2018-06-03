@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Provide controller methods with object instead of ID
+Route::model('tasks', 'Task');
+Route::model('projects', 'Project');
+
 Route::resource('projects', 'ProjectsController');
 Route::bind('projects', function($value, $route) {
 	return App\Project::whereSlug($value)->first();
