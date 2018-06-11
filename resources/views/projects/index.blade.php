@@ -8,7 +8,7 @@
     @else
         <ul>
             @foreach( $projects as $project )
-                <li><a href="{{ route('projects.show', $project->id) }}">{{ $project->name }}</a></li>
+                <li><a href="{{ route('projects.show', $project->slug) }}">{{ $project->name }}</a></li>
             @endforeach
         </ul>
     @endif
